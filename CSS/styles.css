@@ -2,9 +2,16 @@ html, body{ height:100%; width:100%; font-family: 'Quicksand'; }
 html, body, table, td, tr{ margin:0; padding:0; }
 .title h1 {
     font-family: 'Quicksand';
-    font-size: 84px;
     font-weight: 700;
     color: #333;
+    margin-top: 17vh;
+    font-size: 85px;
+}
+@media (max-width: 550px) {
+    .title h1 {
+        font-size: 55px;
+        margin-top: 15vh;
+    }
 }
 .loginheader {
     text-align: center;
@@ -87,4 +94,70 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
     transition: background-color 5000s ease-in-out 0s;
     -webkit-box-shadow: 0 0 0px 1000px #eaf8ff inset;
+}
+.topwindow {
+    background-color: #42c2f4;
+    color: white;
+    height: 50%;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    overflow: hidden;
+    font-family: 'Quicksand';
+}
+.botwindow {
+    height: 50%;
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    float: right;
+    overflow: hidden;
+    font-family: 'Quicksand';
+    display: table;
+}
+.leftwindow {
+    background-color: #42c2f4;
+    color: white;
+    width: 50%;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    overflow: hidden;
+    font-family: 'Quicksand';
+}
+.rightwindow {
+    width: 50%;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    float: right;
+    overflow: hidden;
+    font-family: 'Quicksand';
+    display: table;
+}
+.homebutts {
+    margin-top: 28px;
+    width: 310px;
+    border: none;
+    border-radius: 18px;
+    background-color: #42c2f4;
+    color: white;
+    font-weight: 700;
+    height: 36px;
+    font-family: 'Quicksand';
+    font-size: 16px;
+    transition: all 0.25s ease-out;
+    display: block;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+.homebutts:hover {
+    background-color: #7cdaff;
+}
+.buttcontainer {
+    display: table-cell;
+    vertical-align: middle;
 }
