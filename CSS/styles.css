@@ -105,6 +105,7 @@ select:-webkit-autofill:focus {
     float: left;
     overflow: hidden;
     font-family: 'Quicksand';
+    display: table;
 }
 .botwindow {
     height: 50%;
@@ -126,6 +127,7 @@ select:-webkit-autofill:focus {
     float: left;
     overflow: hidden;
     font-family: 'Quicksand';
+    display: table;
 }
 .rightwindow {
     width: 50%;
@@ -188,13 +190,19 @@ select:-webkit-autofill:focus {
 }
 .tatable {
     width:65%; 
+    height: 65vh;
     text-align: center;
     margin: auto; 
-    margin-top: 100px;
     background-color: white;
     border-radius: 18px;
     color: #333;
 }
-.tatable tr, td {
-    border: 2px 42c2f4;
+.tatable tr, td, th {
+    border: 1px solid #42c2f4;
+    border-radius: 18px;
+    text-align: center;
+}
+.tatable td {
+    height: 20px;
+    overflow: hidden;
 }
