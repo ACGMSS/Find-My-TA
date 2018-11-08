@@ -29,25 +29,8 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         
-        <script>
-        
-            function windowcheck() {
-                if ($(window).height() > $(window).width()*0.9) {
-                    $(view1).removeClass("leftwindow");
-                    $(view2).removeClass("rightwindow");
-                    $(view1).addClass("topwindow");
-                    $(view2).addClass("botwindow");
-                }
-                else {
-                    $(view1).addClass("leftwindow");
-                    $(view2).addClass("rightwindow");
-                    $(view1).removeClass("topwindow");
-                    $(view2).removeClass("botwindow");
-                }
-            }
-            
+        <script>            
             window.onresize = windowcheck;
-        
         </script>
         
     </head>
@@ -56,7 +39,7 @@
         
         <div class="topwindow" id="view1">
         
-            <table style="width:80%; text-align: center; margin: auto; margin-top: 100px;">
+            <table class="tatable" style="">
                 <tr>
                     <th>Firstname</th>
                     <th>Lastname</th> 
@@ -85,10 +68,14 @@
         
             <div class="buttcontainer">
             
-                <button class="homebutts" type="">Login</button>
-                <button class="homebutts" type="">Login</button>
-                <button class="homebutts" type="">Login</button>
-                <button class="homebutts" type="">Login</button>
+                <button class="homebutts" type="">Update Office Hours</button>
+                <button class="homebutts" type="">Update Location</button>
+                <button class="homebutts" type="">Update Research</button>
+                <div class="smbuttcontainer">
+                    <button class="smallbutts" type="">Twitter</button>
+                    <button class="smallbutts" type="">Facebook</button>
+                    <button class="smallbutts" type="">Rate My Professsor</button>
+                </div>
             
             </div>
         

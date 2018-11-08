@@ -145,14 +145,14 @@ select:-webkit-autofill:focus {
     background-color: #42c2f4;
     color: white;
     font-weight: 700;
-    height: 36px;
+    height: 48px;
     font-family: 'Quicksand';
     font-size: 16px;
     transition: all 0.25s ease-out;
     display: block;
     margin: auto;
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 .homebutts:hover {
     background-color: #7cdaff;
@@ -160,4 +160,41 @@ select:-webkit-autofill:focus {
 .buttcontainer {
     display: table-cell;
     vertical-align: middle;
+}
+.smallbutts {
+    margin-top: 28px;
+    width: 100px;
+    border: none;
+    border-radius: 18px;
+    background-color: #42c2f4;
+    color: white;
+    font-weight: 700;
+    height: 48px;
+    font-family: 'Quicksand';
+    font-size: 14px;
+    transition: all 0.25s ease-out;
+    display: inline-block;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    vertical-align: top;
+}
+.smallbutts:hover {
+    background-color: #7cdaff;
+}
+.smbuttcontainer {
+    margin: auto;
+    width: 310px;
+    height: 48px;
+}
+.tatable {
+    width:65%; 
+    text-align: center;
+    margin: auto; 
+    margin-top: 100px;
+    background-color: white;
+    border-radius: 18px;
+    color: #333;
+}
+.tatable tr, td {
+    border: 2px 42c2f4;
 }
