@@ -1,4 +1,4 @@
-html, body{ height:100%; width:100%; font-family: 'Quicksand'; }
+html, body{ height:100%; width:100%; font-family: 'Quicksand'; overflow-y: overlay; }
 html, body, table, td, tr{ margin:0; padding:0; }
 .title h1 {
     font-family: 'Quicksand';
@@ -209,6 +209,11 @@ select:-webkit-autofill:focus {
     }
     .cname {
         display: none;
+    }
+}
+@media only screen and (max-width: 800px) {
+    body {
+        overflow-x: hidden;
     }
 }
 .tatable tbody tr {
