@@ -98,7 +98,7 @@ select:-webkit-autofill:focus {
 .topwindow {
     background-color: #42c2f4;
     color: white;
-    height: 50%;
+    height: 60%;
     width: 100vw;
     margin: 0px;
     padding: 0px;
@@ -108,7 +108,7 @@ select:-webkit-autofill:focus {
     display: table;
 }
 .botwindow {
-    height: 50%;
+    height: 40%;
     width: 100vw;
     margin: 0px;
     padding: 0px;
@@ -120,7 +120,7 @@ select:-webkit-autofill:focus {
 .leftwindow {
     background-color: #42c2f4;
     color: white;
-    width: 50%;
+    width: 60%;
     height: 100vh;
     margin: 0px;
     padding: 0px;
@@ -130,7 +130,7 @@ select:-webkit-autofill:focus {
     display: table;
 }
 .rightwindow {
-    width: 50%;
+    width: 40%;
     height: 100vh;
     margin: 0px;
     padding: 0px;
@@ -189,20 +189,47 @@ select:-webkit-autofill:focus {
     height: 48px;
 }
 .tatable {
-    width:65%; 
-    height: 65vh;
-    text-align: center;
-    margin: auto; 
+    width: 65%;
+    min-width: 450px;
     background-color: white;
-    border-radius: 18px;
     color: #333;
-}
-.tatable tr, td, th {
-    border: 1px solid #42c2f4;
     border-radius: 18px;
-    text-align: center;
+    margin-left:auto; 
+    margin-right:auto;
+    line-height: 30px;
 }
-.tatable td {
-    height: 20px;
+@media only screen and (max-width: 600px) {
+    .tatable {
+        width: 50vw;
+        background-color: white;
+        color: #333;
+        border-radius: 0px;
+        overflow: hidden;
+    }
+    .cname {
+        display: none;
+    }
+}
+.tatable tbody tr {
     overflow: hidden;
+    cursor: pointer;
+    transition: all 0.15s ease-out;
+}
+.tatable tbody tr:hover {
+    background-color: #C9F0FF;
+}
+.tatable tbody tr:active {
+    color: #42c2f4;
+}
+.tablebutts {
+    background-color: white;
+    color: #333;
+    border: none;
+    border-radius: 6px;
+    margin-top: 20px;
+    width: 153px;
+    transition: all 0.15s ease-out;
+}
+.tablebutts:hover {
+    background-color: #C9F0FF;
 }

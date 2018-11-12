@@ -1,5 +1,5 @@
 function windowcheck() {
-    if ($(window).height() > $(window).width()*0.9) {
+    if (($(window).height() > $(window).width()*0.9)) {
         $(view1).removeClass("leftwindow");
         $(view2).removeClass("rightwindow");
         $(view1).addClass("topwindow");
