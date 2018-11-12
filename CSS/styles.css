@@ -198,9 +198,10 @@ select:-webkit-autofill:focus {
     margin-right:auto;
     line-height: 30px;
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 450px) {
     .tatable {
-        width: 50vw;
+        width: 100%;
+        min-width: 0px;
         background-color: white;
         color: #333;
         border-radius: 0px;
@@ -226,7 +227,7 @@ select:-webkit-autofill:focus {
     color: #333;
     border: none;
     border-radius: 6px;
-    margin-top: 20px;
+    margin-top: 14px;
     width: 153px;
     transition: all 0.15s ease-out;
 }
