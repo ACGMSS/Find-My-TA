@@ -31,8 +31,8 @@
         
     </head>
 
-    <body>
-        <div class="container-fluid">
+    <body ng-app="find-my-ta">
+        <div class="container-fluid" ng-controller="FrontPageController">
             <div class="row">
                 <div class="title"><h1>Find My TA</h1></div>
             </div>
@@ -48,11 +48,11 @@
 
                         <form>
                             <label for="uname" style="display: block;"><b>Username</b></label>
-                            <input type="text" placeholder="Enter Username" name="uname" required>
+                            <input type="text" placeholder="Enter Username" name="uname" required ng-model="studentUsername">
                             <label for="psw"><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" required>
-                            <button class="login" type="submit">Login</button>
-                            <a href="#" class="signup">Sign Up</a>
+                            <input type="password" placeholder="Enter Password" name="psw" required ng-model="studentPassword">
+                            <button class="login" type="submit" ng-click="logInStudent()">Login</button>
+                            <a href="#" class="signup" ng-click="signUpStudent()">Sign Up</a>
                         </form>
 
                     </div>
@@ -63,16 +63,16 @@
 
                 <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
 
-                    <div class="row"><h2 class="loginheader">TA Login</h2></div>
+                    <div class="row"><h2 class="loginheader">Faculty Login</h2></div>
                     <div class="row">
 
                         <form>
                             <label for="uname"><b>Username</b></label>
-                            <input type="text" placeholder="Enter Username" name="uname" required>
+                            <input type="text" placeholder="Enter Username" name="uname" required ng-model="facultyUsername">
                             <label for="psw"><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" required>
-                            <button class="login" type="submit">Login</button>
-                            <a href="#" class="signup">Sign Up</a>
+                            <input type="password" placeholder="Enter Password" name="psw" required ng-model="facultyPassword">
+                            <button class="login" type="submit" ng-click="logInFaculty()">Login</button>
+                            <a href="#" class="signup" ng-click="signUpFaculty()">Sign Up</a>
                         </form>
 
                     </div>
@@ -84,6 +84,10 @@
             </div>
             <div style="height: 50px;"></div>
         </div>
+        <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-resource.js"></script>
+        <script src="app.js"></script>
+        <script src="frontPageController.js"></script>
     </body>
     
 </html>
