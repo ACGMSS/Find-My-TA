@@ -1,17 +1,22 @@
 angular.module('student').controller('StudentHomeController', ['$scope', '$resource', '$http', func]);
 
 function func($scope, $resource, $http) {
+    const studentID = sessionStorage.getItem("studentID");
+
     $scope.redirectToAddCourse = function() {
         window.location.href = "/student-add-course.html";
     };
 
-    $scope.enrolledCourses = [
-        {
-            name: "jess"
-        }
-    ];
+    $scope.dropCourse = function(course) {
+        $http.put(`/api/student/${studentID}/drop_course/${course.sectionNumber}`)
+            .then(response => {
+                window.location.href = "/student-home.html";
+            }).catch(error => {
+                alert(JSON.stringify(error));
+            });
+    };
 
-    $http.get(`/api/student/${sessionStorage.getItem("studentID")}`)
+    $http.get(`/api/student/${studentID}`)
         .then(response => {
             return Promise.all(response.data.data.coursesEnrolled.map((courseID) => {
                 return $http.get(`/api/course_section/${courseID}`);
