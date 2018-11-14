@@ -12,4 +12,8 @@ function func($scope, $http) {
             console.log(responses);
             $scope.managedCourses = responses.map(x => x.data.data);
         }).catch(e => alert(JSON.stringify(e)));
+
+    $scope.redirectToAddCourse = function() {
+        window.location.href = "/faculty-add-course.html";
+    };
 }
