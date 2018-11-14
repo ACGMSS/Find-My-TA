@@ -1,0 +1,78 @@
+<!doctype html>
+
+<html lang="en">
+    
+    <head>
+        
+        <meta charset="utf-8">
+
+        <title>Find My TA</title>
+        <meta name="description" content="Find My TA">
+        <meta name="author" content="Software Group 1">
+        <meta name="apple-mobile-web-app-title" content="Find My TA">
+        <meta name="application-name" content="Find My TA">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="CSS/styles.css">
+        <script src="JS/scripts.js"></script>
+        
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:200,400" rel="stylesheet">
+        
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+    </head>
+
+    <body ng-app="find-my-ta">
+        <div class="container-fluid" ng-controller="FacultyUpdateAccountController">
+            <div class="row">
+                <div class="title"><h1>Find My TA</h1></div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4">
+                    <div class="row"><h2 class="loginheader">Faculty Account Update</h2></div>
+                    <div class="row">
+                        <form>
+                            <label for="uname"><b>Email</b></label>
+                            <input type="text" placeholder="Enter Email" name="uname" required ng-model="facultyEmail">
+
+                            <label for="psw"><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" required ng-model="facultyPassword">
+
+                            <label for="name"><b>Name</b></label>
+                            <input type="text" placeholder="Enter Name" name="name" required ng-model="name">
+
+                            <label for="Twitter"><b>Twitter</b></label>
+                            <input type="text" placeholder="Twitter" name="Twitter" required ng-model="twitter">
+
+                            <label for="Linkedin"><b>Linkedin</b></label>
+                            <input type="text" placeholder="Linkedin" name="Linkedin" required ng-model="linkedin">
+
+                            <button class="login" type="submit" ng-click="updateAccount()">Update</button>
+                        </form>
+
+                    </div>
+
+                </div>
+
+                <div class="col-xs-0 col-sm-0 col-md-1 col-lg-2"></div>
+
+            </div>
+            <div style="height: 50px;"></div>
+        </div>
+        <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-resource.js"></script>
+        <script src="app.js"></script>
+        <script src="facultyUpdateAccountController.js"></script>
+    </body>
+    
+</html>

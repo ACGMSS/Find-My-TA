@@ -92,13 +92,14 @@
             return;
           }
           //clear map markers if new selection is inputted
-          if(markers.length!=0){
-              markers[i].setMap(null);
+            if(markers[0] != null){
+                markers[0].setMap(null);
           }
           firstmarkerimg = "https://i.imgur.com/KrPofH4.png"
     
           var marker = new google.maps.Marker({ map: map, position: place.geometry.location, animation: google.maps.Animation.DROP, icon: firstmarkerimg });
-          markers.push(marker)
+            markers[0] = (marker);
+            map.setCenter(marker.getPosition());
         });
 
       }

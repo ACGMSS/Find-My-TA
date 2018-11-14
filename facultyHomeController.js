@@ -17,4 +17,8 @@ function func($scope, $http) {
     $scope.redirectToAddCourse = function() {
         window.location.href = "/faculty-add-course.html";
     };
+
+    $scope.redirectToUpdateAccount = function() {
+        window.location.href = "/faculty-update-profile.html";
+    };
 }
