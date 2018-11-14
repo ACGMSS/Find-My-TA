@@ -1,5 +1,5 @@
 html, body{ height:100%; width:100%; font-family: 'Quicksand'; overflow-y: overlay; }
-html, body, table, td, tr{ margin:0; padding:0; }
+html, body, table, tr{ margin:0; padding:0; }
 .title h1 {
     font-family: 'Quicksand';
     font-weight: 700;
@@ -189,7 +189,7 @@ select:-webkit-autofill:focus {
     height: 48px;
 }
 .tatable {
-    width: 65%;
+    width: 75%;
     min-width: 450px;
     background-color: white;
     color: #333;
@@ -207,9 +207,6 @@ select:-webkit-autofill:focus {
         border-radius: 0px;
         overflow: hidden;
     }
-    .cname {
-        display: none;
-    }
 }
 @media only screen and (max-width: 800px) {
     body {
@@ -218,15 +215,25 @@ select:-webkit-autofill:focus {
 }
 .tatable tbody tr {
     overflow: hidden;
-    cursor: pointer;
+/*    cursor: pointer;*/
     transition: all 0.15s ease-out;
 }
+.tatable thead tr td {
+    padding: 10px;
+    white-space: nowrap;
+}
+.tatable tbody tr td {
+    padding: 10px;
+}
+/*
 .tatable tbody tr:hover {
     background-color: #C9F0FF;
+    border-radius: 0px 0px 18px 18px;
 }
 .tatable tbody tr:active {
     color: #42c2f4;
 }
+*/
 .tablebutts {
     background-color: white;
     color: #333;
@@ -238,4 +245,63 @@ select:-webkit-autofill:focus {
 }
 .tablebutts:hover {
     background-color: #C9F0FF;
+}
+.stopbtn {
+    border: none;
+    border-radius: 18px;
+    margin: 10px;
+    color: white;
+    background-color: #42c2f4;
+    transition: all 0.25s ease-out;
+    float: right;
+}
+.stopbtn:hover {
+    background-color: #7cdaff;
+}
+.sectiontd {
+    text-align: center;
+}
+.addbutt {
+    background-color: white;
+    color: #333;
+    border: none;
+    border-radius: 6px;
+    margin-top: 14px;
+    width: 300px;
+    transition: all 0.15s ease-out;
+}
+.addbutt:hover {
+    background-color: #C9F0FF;
+}
+.currentblu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    margin-right: 10px;
+    color: #42c2f4;
+    font-weight: 700;
+}
+.currentwhi {
+    position: relative;
+    text-align: right;
+    margin-right: 30px;
+    margin-top: 20px;
+    color: white;
+    font-weight: 700;
+}
+.normbtn {
+    border: none;
+    border-radius: 18px;
+    margin: 10px;
+    color: white;
+    background-color: #42c2f4;
+    transition: all 0.25s ease-out;
+    font-weight: 700;
+}
+.normbtn:hover {
+    background-color: #7cdaff;
+}
+.inputpad {
+    margin: 10px;
+    
 }

@@ -40,25 +40,26 @@
         <div class="topwindow" id="view1" ng-controller="StudentHomeController">
         
             <div class="buttcontainer">
-            <h1 style="text-align: center; margin-top: -10px;">Find My TA</h1>
+            <div class="currentblu" id="currentusr">Student: *Username Here* &nbsp; (<a href="#">Sign Out</a>)</div>
+            <h1 style="text-align: center; margin-top: -10px; padding-top: 20px;" id="title">Find My TA</h1>
             <table class="tatable">
               <thead>
                 <tr style="height: 50px;">
-                    <td class="cname"><strong>Course Name</strong></td>
-                    <td class="cname"><strong>Section Number</strong></td>
+                    <td><strong>Course Name</strong></td>
+                    <td><strong>Section Number</strong></td>
                 </tr>
               </thead>
               <tbody>
                   <tr ng-repeat="course in enrolledCourses">
-                      <td class="cname">{{course.name}}</td>
+                      <td>{{course.name}}</td>
                       <td>{{course.sectionNumber}}</td>
-                      <td><button ng-click="loadDetailedInfo(course)">Load Detailed Info</button></td>
-                      <td><button ng-click="dropCourse(course)">Drop Course</button></td>
+                      <td><button ng-click="loadDetailedInfo(course)" class="stopbtn">Load Detailed Info</button></td>
+                      <td><button ng-click="dropCourse(course)" class="stopbtn">Drop Course</button></td>
                 </tr>
               </tbody>
             </table>
             <div class="smbuttcontainer">
-                    <button class="tablebutts" type="" ng-click="redirectToAddCourse()"><strong>+</strong> Add Course</button>
+                    <button class="addbutt" type="" ng-click="redirectToAddCourse()"><strong>+</strong> Add Course</button>
                 </div>
             </div>
             
