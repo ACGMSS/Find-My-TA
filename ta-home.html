@@ -50,7 +50,6 @@
                   <tr ng-repeat="course in managedCourses">
                       <td class="cname">{{course.name}}</td>
                       <td>{{course.sectionNumber}}</td>
-                      <td><button ng-click="loadDetailedInfo(course)">Load Detailed Info</button></td>
                       <td><button ng-click="stopManagingCourse(course)">Stop Managing Course</button></td>
                   </tr>
               </tbody>            </table>
@@ -63,20 +62,10 @@
         </div>
         
         <div class="botwindow" id="view2">
-        
             <div class="buttcontainer">
-            
-                <button class="homebutts" type="">Update Office Hours</button>
-                <button class="homebutts" type="">Update Location</button>
-                <button class="homebutts" type="">Update Research</button>
-                <div class="smbuttcontainer" style="margin-top: 20px;">
-                    <button class="smallbutts" type="">Twitter</button>
-                    <button class="smallbutts" type="">Facebook</button>
-                    <button class="smallbutts" type="">Rate My Professsor</button>
-                </div>
-            
+                <button class="homebutts" type="">Update Personal Information</button>
+                <button class="homebutts" type="">Update Login Information</button>
             </div>
-        
         </div>
         <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-resource.js"></script>
