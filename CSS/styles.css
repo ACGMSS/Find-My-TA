@@ -198,7 +198,7 @@ select:-webkit-autofill:focus {
     margin-right:auto;
     line-height: 30px;
 }
-@media only screen and (max-width: 450px) {
+@media only screen and (max-width: 500px) {
     .tatable {
         width: 100%;
         min-width: 0px;
