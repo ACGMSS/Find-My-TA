@@ -58,28 +58,6 @@ function func($scope, $resource, $http) {
     };
 
     $scope.signUpFaculty = function() {
-        let newFaculty = new Faculty({
-            facultyType: "Professor",
-            name: "Jess Smith " + Math.random(),
-            email: $scope.facultyUsername,
-            password: $scope.facultyPassword,
-            social: {
-                twitterHandle: "definitelyreal",
-                linkedinLink: "evenmorereal"
-            }
-        });
-        newFaculty.$save().then(() => {
-            sessionStorage.setItem("facultyUsername",  $scope.facultyUsername);
-            sessionStorage.setItem("facultyPassword", $scope.facultyPassword);
-            // (comment from jess): i wrote this, but it sucks because $resource
-            // is supposed to strip away the need to do things like '.data'.
-            // I want to change this later.
-            sessionStorage.setItem("facultyID", newFaculty.data._id);
-            console.log(sessionStorage.getItem("facultyID"));
-            window.location.href = "/ta-home.html";
-        }).catch(e => {
-            alert("Error when creating new faculty: " + JSON.stringify(e));
-            throw e;
-        });
+        window.location.href = "/sign-up-faculty.html";
     };
 };
