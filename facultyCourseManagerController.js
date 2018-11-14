@@ -8,25 +8,18 @@ function func($scope, UFAPIService, $resource, $http) {
             term: 2188
         }).then(function (courses) {
             $scope.listings = courses;
-        });
-    }
-
-    $scope.registerAsTeacher = function(listing, sectionIndex) {
-        const CourseSection = $resource('/api/course_section/:id', {
-            id: '@_id'
-        });
+        }).catch(e => alert(JSON.stringify(e)));
+    } $scope.registerAsTeacher = function(listing, sectionIndex) {
         let section = listing.sections[sectionIndex];
-        var newCourse = new CourseSection({
+        let newCourse = {
             sectionNumber: listing.sections[sectionIndex].classNumber + "",
             term: { semester: "Fall", year: 2018 },
             name: listing.name,
-            meetingSettings: section.meetTimes,
-        });
-        var courseSavePromise = newCourse.$save();
-        // TODO: fix this so that it doesn't die if there's a duplicate
-        courseSavePromise.then(function() {
+            meetingSettings: section.meetTimes
+        };
+        $http.post(`/api/course_section/upsert`, newCourse).then((id) => {
             return $http.put(`/api/faculty/${sessionStorage.getItem("facultyID")}/manage_course`, {
-                section: newCourse.data.sectionNumber,
+                section: newCourse.sectionNumber,
                 discord: $scope.discord,
                 slack: $scope.slack,
                 officeHoursTime: $scope.officeHoursTime,
@@ -35,7 +28,7 @@ function func($scope, UFAPIService, $resource, $http) {
         }).then(() => {
             window.location.href = "/ta-home.html";
         }).catch(function (e) {
-            console.log(e);
+            alert(JSON.stringify(e));
         });
     };
 

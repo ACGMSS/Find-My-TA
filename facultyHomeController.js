@@ -8,7 +8,8 @@ function func($scope, $http) {
             return Promise.all(c.data.data.courses.map(x => {
                 return $http.get(`/api/course_section/${x.section}`);
             }));
-        }).then(responses => {
+        })
+        .then(responses => {
             console.log(responses);
             $scope.managedCourses = responses.map(x => x.data.data);
         }).catch(e => alert(JSON.stringify(e)));
