@@ -38,8 +38,8 @@
                       <th>Office Location</th>
                   </tr>
                   <tr ng-repeat="admin in admins">
-                      <td>{{admin.name}}</td>
-                      <td>{{admin.email}}</td>
+                      <td><a ng-click="viewDetailedAdmin(admin)">{{admin.name}}</a></td>
+                      <td>{{admin.email}}</td
                       <td>{{admin.officeHoursTime}}</td>
                       <td>{{admin.officeHoursLocation}}</td>
                   </tr>

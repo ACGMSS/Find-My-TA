@@ -22,4 +22,9 @@ function func($scope, $http) {
                 return result.data;
             });
     }
+
+    $scope.viewDetailedAdmin = function(admin) {
+        const facultyID = admin._id;
+        window.location.href = `/student-detailed-faculty-view.html?facultyID=${facultyID}`;
+    };
 }
