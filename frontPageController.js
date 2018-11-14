@@ -1,8 +1,9 @@
 angular.module('front-page').controller('FrontPageController', ['$scope',
                                                                 '$resource',
+                                                                '$http',
                                                                 func]);
 
-function func($scope, $resource) {
+function func($scope, $resource, $http) {
     const Faculty = $resource("/api/faculty/:id", {
         id: '@id'
     });
@@ -11,12 +12,32 @@ function func($scope, $resource) {
         id: '@id'
     });
 
-    $scope.logInFaculty = function() {
-        alert("Faculty login not yet implemented");
+    $scope.logInStudent = function() {
+        $http.post("/api/student_login", {
+            username: $scope.studentUsername,
+            password: $scope.studentPassword,
+        }).then((response) => {
+            sessionStorage.setItem("studentUsername",  $scope.studentUsername);
+            sessionStorage.setItem("studentPassword", $scope.studentPassword);
+            sessionStorage.setItem("studentID", response.data._id);
+            window.location.href = "/student-home.html";
+        }).catch((e) => {
+            alert(JSON.stringify(e));
+        });
     };
 
-    $scope.logInStudent = function() {
-        alert("Student log in not yet implemented");
+    $scope.logInFaculty = function() {
+        $http.post("/api/faculty_login", {
+            username: $scope.facultyUsername,
+            password: $scope.facultyPassword,
+        }).then((response) => {
+            sessionStorage.setItem("facultyUsername",  $scope.facultyUsername);
+            sessionStorage.setItem("facultyPassword", $scope.facultyPassword);
+            sessionStorage.setItem("facultyID", response.data._id);
+            window.location.href = "/ta-home.html";
+        }).catch((e) => {
+            alert(JSON.stringify(e));
+        });
     };
 
     $scope.signUpStudent = function() {
@@ -27,7 +48,7 @@ function func($scope, $resource) {
         });
         newStudent.$save().then(() => {
             sessionStorage.setItem("studentUsername",  $scope.studentUsername);
-            sessionStorage.setItem("studentPassword", $scope.stduentPassword);
+            sessionStorage.setItem("studentPassword", $scope.studentPassword);
             sessionStorage.setItem("studentID", newStudent.data._id);
             window.location.href = "/student-home.html";
         }).catch(e => {
