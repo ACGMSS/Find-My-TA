@@ -26,7 +26,7 @@ function func($scope, UFAPIService, $resource, $http) {
         // TODO: fix this so that it doesn't die if there's a duplicate
         courseSavePromise.then(function() {
             return $http.put(`/api/faculty/${sessionStorage.getItem("facultyID")}/manage_course`, {
-                section: newCourse.data._id,
+                section: newCourse.data.sectionNumber,
                 discord: $scope.discord,
                 slack: $scope.slack,
                 officeHoursTime: $scope.officeHoursTime,

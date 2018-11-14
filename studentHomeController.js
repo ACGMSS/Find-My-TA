@@ -7,6 +7,10 @@ function func($scope, $resource, $http) {
         window.location.href = "/student-add-course.html";
     };
 
+    $scope.loadDetailedInfo = function(course) {
+        window.location.href = `/student-detailed-course-view.html?sectionNumber=${course.sectionNumber}`;
+    };
+
     $scope.dropCourse = function(course) {
         $http.put(`/api/student/${studentID}/drop_course/${course.sectionNumber}`)
             .then(response => {

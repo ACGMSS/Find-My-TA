@@ -10,7 +10,7 @@ function func($scope, $http) {
                     meetingPlace: setting.meetBuilding + ": " + setting.meetRoom
                 };
             });
-
+            console.log(result);
             $scope.admins = result.admins;
         }).catch(e => alert(JSON.stringify(e)));
 
