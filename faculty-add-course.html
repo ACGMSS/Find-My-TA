@@ -22,7 +22,7 @@
                         <th>Course Name</th>
                         <th>Course Code</th>
                     </tr>
-                    <tr ng-repeat="listing in listings">
+                    <tr ng-repeat="listing in listings | filter:query as results">
                         <td>{{listing.code}}</td>
                         <td>{{listing.name}}</td>
                         <td><button ng-click="seeSections(listing)">See Sections</button></td>
