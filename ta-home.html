@@ -35,86 +35,26 @@
         
     </head>
 
-    <body onload="windowcheck()">
-        
+    <body onload="windowcheck()" ng-app="find-my-ta" ng-controller="FacultyHomeController">
         <div class="topwindow" id="view1">
-        
             <div class="buttcontainer">
             <table class="tatable">
               <thead>
                 <tr style="height: 50px;">
-                    <td class="cname"><strong>&nbsp;&nbsp;Course Name</strong></td>
-                    <td><strong>&nbsp;&nbsp;Course Code</strong></td>
-                    <td><strong>Section Number</strong></td>
-                    <td><strong>Office Hours</strong></td>
+                    <td class="cname"><strong>Course Name</strong></td>
+                    <td class="cname"><strong>Section Number</strong></td>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                    <td class="cname">&nbsp;&nbsp;Intro to Software</td>
-                    <td>&nbsp;&nbsp;CEN3031</td>
-                    <td>11471</td>
-                    <td>16:05 - 16:55</td>
-                </tr>
-                <tr>
-                    <td class="cname">&nbsp;&nbsp;Intro to Software</td>
-                    <td>&nbsp;&nbsp;CEN3031</td>
-                    <td>11471</td>
-                    <td>16:05 - 16:55</td>
-                </tr>
-                  <tr>
-                    <td class="cname">&nbsp;&nbsp;Intro to Software</td>
-                    <td>&nbsp;&nbsp;CEN3031</td>
-                    <td>11471</td>
-                    <td>16:05 - 16:55</td>
-                </tr>
-                <tr>
-                    <td class="cname">&nbsp;&nbsp;Intro to Software</td>
-                    <td>&nbsp;&nbsp;CEN3031</td>
-                    <td>11471</td>
-                    <td>16:05 - 16:55</td>
-                </tr>
-                <tr>
-                    <td class="cname">&nbsp;&nbsp;Intro to Software</td>
-                    <td>&nbsp;&nbsp;CEN3031</td>
-                    <td>11471</td>
-                    <td>16:05 - 16:55</td>
-                </tr>
-                <tr>
-                    <td class="cname">&nbsp;&nbsp;Intro to Software</td>
-                    <td>&nbsp;&nbsp;CEN3031</td>
-                    <td>11471</td>
-                    <td>16:05 - 16:55</td>
-                </tr>
-                <tr>
-                    <td class="cname">&nbsp;&nbsp;Intro to Software</td>
-                    <td>&nbsp;&nbsp;CEN3031</td>
-                    <td>11471</td>
-                    <td>16:05 - 16:55</td>
-                </tr>
-                <tr>
-                    <td class="cname">&nbsp;&nbsp;Intro to Software</td>
-                    <td>&nbsp;&nbsp;CEN3031</td>
-                    <td>11471</td>
-                    <td>16:05 - 16:55</td>
-                </tr>
-                <tr>
-                    <td class="cname">&nbsp;&nbsp;Intro to Software</td>
-                    <td>&nbsp;&nbsp;CEN3031</td>
-                    <td>11471</td>
-                    <td>16:05 - 16:55</td>
-                </tr>
-                <tr>
-                    <td class="cname">&nbsp;&nbsp;Intro to Software</td>
-                    <td>&nbsp;&nbsp;CEN3031</td>
-                    <td>11471</td>
-                    <td>16:05 - 16:55</td>
-                </tr>
-              </tbody>
-            </table>
+                  <tr ng-repeat="course in managedCourses">
+                      <td class="cname">{{course.name}}</td>
+                      <td>{{course.sectionNumber}}</td>
+                      <td><button ng-click="loadDetailedInfo(course)">Load Detailed Info</button></td>
+                      <td><button ng-click="stopManagingCourse(course)">Stop Managing Course</button></td>
+                  </tr>
+              </tbody>            </table>
             <div class="smbuttcontainer">
                     <button class="tablebutts" type=""><strong>+</strong> Add Course</button>
-                    <button class="tablebutts" type=""><strong>--</strong> Remove Course</button>
                 </div>
             </div>
             
@@ -137,7 +77,10 @@
             </div>
         
         </div>
-           
+        <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-resource.js"></script>
+        <script src="app.js"></script>
+        <script src="facultyHomeController.js"></script>
     </body>
     
 </html>
