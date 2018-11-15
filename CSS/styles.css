@@ -292,7 +292,6 @@ select:-webkit-autofill:focus {
 .normbtn {
     border: none;
     border-radius: 18px;
-    margin: 10px;
     color: white;
     background-color: #42c2f4;
     transition: all 0.25s ease-out;
