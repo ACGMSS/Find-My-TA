@@ -38,23 +38,24 @@
     <body onload="windowcheck()" ng-app="find-my-ta" ng-controller="FacultyHomeController">
         <div class="topwindow" id="view1">
             <div class="buttcontainer">
-            <h1 style="text-align: center; margin-top: -10px; padding-top: 20px;">Find My TA</h1>
+            <div class="currentblu" id="currentusr">TA: *Username Here* &nbsp; (<a href="#">Sign Out</a>)</div>
+            <h1 style="text-align: center; margin-top: -10px; padding-top: 20px;" id="title">Find My TA</h1>
             <table class="tatable">
               <thead>
                 <tr style="height: 50px;">
-                    <td class="cname"><strong>Course Name</strong></td>
-                    <td class="cname"><strong>Section Number</strong></td>
+                    <td><strong>Course Name</strong></td>
+                    <td><strong>Section Number</strong></td>
                 </tr>
               </thead>
               <tbody>
                   <tr ng-repeat="course in managedCourses">
-                      <td class="cname">{{course.name}}</td>
-                      <td>{{course.sectionNumber}}</td>
-                      <td><button ng-click="stopManagingCourse(course)">Stop Managing Course</button></td>
+                      <td>{{course.name}}</td>
+                      <td class="sectiontd">{{course.sectionNumber}}</td>
+                      <td><button ng-click="stopManagingCourse(course)" class="stopbtn">Stop Managing Course</button></td>
                   </tr>
               </tbody>            </table>
             <div class="smbuttcontainer">
-                <button class="tablebutts" type="" ng-click="redirectToAddCourse()"><strong>+</strong> Add Course</button>
+                <button class="addbutt" ng-click="redirectToAddCourse()"><strong>+</strong> Add Course</button>
                 </div>
             </div>
             
