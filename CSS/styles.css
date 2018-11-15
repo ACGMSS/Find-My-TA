@@ -289,3 +289,19 @@ select:-webkit-autofill:focus {
     color: white;
     font-weight: 700;
 }
+.normbtn {
+    border: none;
+    border-radius: 18px;
+    margin: 10px;
+    color: white;
+    background-color: #42c2f4;
+    transition: all 0.25s ease-out;
+    font-weight: 700;
+}
+.normbtn:hover {
+    background-color: #7cdaff;
+}
+.inputpad {
+    margin: 10px;
+    
+}
