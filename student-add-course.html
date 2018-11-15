@@ -2,7 +2,8 @@
 <html>
   <head>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="CSS/styles.css">
+      <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
   </head>
   <body ng-app="find-my-ta">
       <div class="container">
@@ -17,7 +18,7 @@
                     <tr ng-repeat="listing in listings">
                         <td>{{listing.name}}</td>
                         <td>{{listing.sectionNumber}}</td>
-                        <td><button ng-click="register(listing)">Register</button></td>
+                        <td><button class="normbtn" ng-click="register(listing)">Register</button></td>
                     </tr>
                 </table>
             </div>
