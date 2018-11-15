@@ -6,31 +6,40 @@
       <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
   </head>
   <body ng-app="find-my-ta" ng-controller="StudentDetailedFacultyViewController">
-      <h2>Faculty Information</h2>
-      <p><b>Name: </b>{{faculty.name}}</p>
-      <p><b>Faculty Type: </b>{{faculty.facultyType}}</p>
-      <p><b>Email: </b>{{faculty.email}}</p>
-      <p><b>Twitter: </b>{{faculty.social.twitterHandle}}</p>
-      <p><b>Linkedin: </b>{{faculty.social.linkedinLink}}</p>
-      <p><b>Rate My Professor: </b>{{faculty.social.rateMyProfessor}}</p>
-      <p><b>Research: </b>{{faculty.research}}</p>
-      <p><b>Job Openings: </b></p>
-      <div class="tableWrapper">
-          <table class="table table-striped table-hover">
-              <tr>
-                  <th>Title</th>
-                  <th>Description</th>
-                  <th>Hours Per Week</th>
-                  <th>Pay Per Hour</th>
-              </tr>
-              <tr ng-repeat="job in faculty.jobOpenings">
-                  <td>{{job.title}}</td>
-                  <td>{{job.description}}</td>
-                  <td>{{job.hoursPerWeek}}</td>
-                  <td>{{job.payPerHour}}</td>
-              </tr>
-          </table>
+      <div class="row">
+          <div class="col-xs-0 col-sm-1 col-md-1 col-lg-2"></div>
+        <div class="col-xs-12 col-sm-10 col-md-10 col-lg-8">
+          
+            <h2>Faculty Information</h2>
+              <p><b>Name: </b>{{faculty.name}}</p>
+              <p><b>Faculty Type: </b>{{faculty.facultyType}}</p>
+              <p><b>Email: </b>{{faculty.email}}</p>
+              <p><b>Twitter: </b>{{faculty.social.twitterHandle}}</p>
+              <p><b>Linkedin: </b>{{faculty.social.linkedinLink}}</p>
+              <p><b>Rate My Professor: </b>{{faculty.social.rateMyProfessor}}</p>
+              <p><b>Research: </b>{{faculty.research}}</p>
+              <p><b>Job Openings: </b></p>
+              <div class="tableWrapper">
+                  <table class="table table-striped table-hover">
+                      <tr>
+                          <th>Title</th>
+                          <th>Description</th>
+                          <th>Hours Per Week</th>
+                          <th>Pay Per Hour</th>
+                      </tr>
+                      <tr ng-repeat="job in faculty.jobOpenings">
+                          <td>{{job.title}}</td>
+                          <td>{{job.description}}</td>
+                          <td>{{job.hoursPerWeek}}</td>
+                          <td>{{job.payPerHour}}</td>
+                      </tr>
+                  </table>
+              </div>
+          
+        </div>
+          <div class="col-xs-0 col-sm-0 col-md-1 col-lg-1"></div>
       </div>
+      
       <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-resource.js"></script>
       <script src="app.js"></script>
