@@ -3,7 +3,7 @@ angular.module('faculty').service('UFAPIService', ['$http', function ($http) {
     const proxyURL = "http://cors-anywhere.herokuapp.com/";
     function encodeRequestToProxy(queryString) {
         let realUrl = baseURL + '?' + queryString;
-        return `http://cors-anywhere.herokuapp.com/${realUrl}`;
+        return `https://cors-anywhere.herokuapp.com/${realUrl}`;
     }
 
 /**

@@ -30,7 +30,12 @@ function func($scope, UFAPIService, $resource, $http) {
                 discord: $scope.discord,
                 slack: $scope.slack,
                 officeHoursTime: $scope.officeHoursTime,
-                officeHoursLocation: $scope.officeHoursLocation,
+                officeHoursLocation: {
+                    buildingName: place.name,
+                    buildingLatitude: place.geometry.location.lat(),
+                    buildingLongitude: place.geometry.location.lng(),
+                    room: $scope.officeHoursRoom,
+                },
             });
         }).then(() => {
             window.location.href = "/ta-home.html";
