@@ -17,7 +17,7 @@ function func($http, $scope, $resource) {
             }
         });
         newFaculty.$save().then(() => {
-            sessionStorage.setItem("facultyUsername",  $scope.facultyUsername);
+            sessionStorage.setItem("facultyUsername",  $scope.facultyEmail);
             sessionStorage.setItem("facultyPassword", $scope.facultyPassword);
             // (comment from jess): i wrote this, but it sucks because $resource
             // is supposed to strip away the need to do things like '.data'.
