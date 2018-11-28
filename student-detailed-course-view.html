@@ -36,14 +36,16 @@
                   <tr>
                       <th>Admin Name</th>
                       <th>Admin Email</th>
-                      <th>Office Hours</th>
-                      <th>Office Location</th>
+                      <th>Office Hours Time</th>
+                      <th>Office Hours Building</th>
+                      <th>Office Hours Room</th>
                   </tr>
                   <tr ng-repeat="admin in admins">
                       <td><a ng-click="viewDetailedAdmin(admin)">{{admin.name}}</a></td>
                       <td>{{admin.email}}</td>
                       <td>{{admin.officeHoursTime}}</td>
-                      <td>{{admin.officeHoursLocation}}</td>
+                      <td><a ng-click="jumpToLocation(admin.officeHoursLocation.buildingLatitude, admin.officeHoursLocation.buildingLongitude)">{{admin.officeHoursLocation.buildingName}}</a></td>
+                      <td>{{admin.officeHoursLocation.room}}</td>
                   </tr>
               </table>
           </div>
@@ -55,7 +57,9 @@
           </div>
           <div id="map"></div>
       </div>
-    <script>
+      <script>
+       var marker = null;
+       var map = null;
       function initMap() {
         var mapOptions = {
           zoom: 15,
@@ -73,10 +77,9 @@
     }
 ]      
         };
+        var place = null;
         var targetElem = document.getElementById('map');
-        var map = new google.maps.Map(targetElem, mapOptions);
-        var markers = []
-
+        map = new google.maps.Map(targetElem, mapOptions);
        
         // Autocomplete input
         var input = document.getElementById('searchTextField');
@@ -85,26 +88,30 @@
 
         // Listen to autocomplete input
         autocomplete.addListener('place_changed', function() {
-
-          var place = autocomplete.getPlace();
+          place = autocomplete.getPlace();
           if (!place.geometry) {
-            // User entered the name of a place that was not suggested and
-            
             window.alert("No details available for input: '" + place.name + "'. Select one of the results.");
             return;
           }
-          //clear map markers if new selection is inputted
-            if(markers[0] != null){
-                markers[0].setMap(null);
-          }
-          firstmarkerimg = "https://i.imgur.com/KrPofH4.png"
-    
-          var marker = new google.maps.Marker({ map: map, position: place.geometry.location, animation: google.maps.Animation.DROP, icon: firstmarkerimg });
-            markers[0] = (marker);
-            map.setCenter(marker.getPosition());
+          placeMarker(place.geometry.location.lat(), place.geometry.location.lng());
         });
-
       }
+
+     function placeMarker(lat, lng) {
+         //clear map markers if new selection is inputted
+         if(marker != null){
+             marker.setMap(null);
+         }
+         firstmarkerimg = "https://i.imgur.com/KrPofH4.png"
+         
+         marker = new google.maps.Marker({ map: map,
+                                           position: {
+                                               lat,
+                                               lng
+                                           },
+                                           animation: google.maps.Animation.DROP, icon: firstmarkerimg });
+         map.setCenter(marker.getPosition());
+     }
     </script>
 
     <!-- Loads maps library (with places library) and then calls initMap() -->

@@ -33,4 +33,8 @@ function func($scope, $http) {
         const facultyID = admin._id;
         window.location.href = `/student-detailed-faculty-view.html?facultyID=${facultyID}`;
     };
+
+    $scope.jumpToLocation = function(lat, lng) {
+        placeMarker(lat, lng);
+    };
 }
