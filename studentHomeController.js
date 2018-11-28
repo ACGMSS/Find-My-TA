@@ -2,6 +2,10 @@ angular.module('student').controller('StudentHomeController', ['$scope', '$resou
 
 function func($scope, $resource, $http) {
     const studentID = sessionStorage.getItem("studentID");
+    const username = sessionStorage.getItem("studentUsername");
+    const password = sessionStorage.getItem("studentPassword");
+    let encoded = btoa(`${username}:${password}`);
+    $http.defaults.headers.common.Authorization = `Basic ${encoded}`;
 
     $scope.redirectToAddCourse = function() {
         window.location.href = "/student-add-course.html";

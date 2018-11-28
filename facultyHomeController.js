@@ -2,6 +2,11 @@ angular.module('faculty').controller('FacultyHomeController', ['$scope', '$http'
 
 function func($scope, $http) {
     const facultyID = sessionStorage.getItem("facultyID");
+    const username = sessionStorage.getItem("facultyUsername");
+    const password = sessionStorage.getItem("facultyPassword");
+    let encoded = btoa(`${username}:${password}`);
+    $http.defaults.headers.common.Authorization = `Basic ${encoded}`;
+
     $http.get(`/api/faculty/${facultyID}`)
         .then(c => {
             console.log(c);
