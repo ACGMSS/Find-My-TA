@@ -1,6 +1,12 @@
 angular.module('student').controller("StudentDetailedCourseViewController", ["$scope", "$http", func]);
 
 function func($scope, $http) {
+    const studentID = sessionStorage.getItem("studentID");
+    const username = sessionStorage.getItem("studentUsername");
+    const password = sessionStorage.getItem("studentPassword");
+    let encoded = btoa(`${username}:${password}`);
+    $http.defaults.headers.common.Authorization = `Basic ${encoded}`;
+
     getSectionAndAdministrators()
         .then(result => {
             var s = result.section.meetingSettings;

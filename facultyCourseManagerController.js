@@ -2,6 +2,13 @@ angular.module('faculty').controller('FacultyCourseManagerController',
                                      ['$scope', 'UFAPIService', '$resource', '$http', func]);
 
 function func($scope, UFAPIService, $resource, $http) {
+    const facultyID = sessionStorage.getItem("facultyID");
+    const username = sessionStorage.getItem("facultyUsername");
+    const password = sessionStorage.getItem("facultyPassword");
+    let encoded = btoa(`${username}:${password}`);
+    $http.defaults.headers.common.Authorization = `Basic ${encoded}`;
+
+
     function updateListingsForDepartment(department) {
         UFAPIService().queryUFCourses({
             dept: department,
