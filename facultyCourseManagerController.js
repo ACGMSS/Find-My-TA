@@ -239,4 +239,16 @@ function func($scope, UFAPIService, $resource, $http) {
 
     $scope.department = "19140000"; // CS
     $scope.updateListings();
+
+    $scope.officeHours = [];
+    $scope.addOfficeHours = function() {
+        $scope.officeHours.push({
+            day: "",
+            time: "",
+        });
+    };
+
+    $scope.deleteOfficeHour = function($index) {
+        $scope.officeHours.splice($index, 1);
+    };
 }
