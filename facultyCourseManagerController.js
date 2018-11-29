@@ -29,7 +29,7 @@ function func($scope, UFAPIService, $resource, $http) {
                 section: newCourse.sectionNumber,
                 discord: $scope.discord,
                 slack: $scope.slack,
-                officeHoursTime: $scope.officeHoursTime,
+                officeHoursTimes: $scope.officeHours,
                 officeHoursLocation: {
                     buildingName: place.name,
                     buildingLatitude: place.geometry.location.lat(),
