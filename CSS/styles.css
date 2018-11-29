@@ -298,9 +298,22 @@ select:-webkit-autofill:focus {
     font-weight: 700;
 }
 .normbtn:hover {
-    background-color: #7cdaff;
+    background-color: #D1F4FF;
 }
 .inputpad {
     margin: 10px;
-    
+}
+.navigation {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    background-color: #7cdaff;
+    height: 50px;
+    line-height: 50px;
+    padding: 0px 20px;
+    font-family: 'Quicksand';
+    font-weight: 600;
+    color: white;
+    font-size: 16px;
 }

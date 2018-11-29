@@ -36,9 +36,12 @@
     </head>
 
     <body onload="windowcheck()" ng-app="find-my-ta" ng-controller="FacultyHomeController">
+        <div class="navigation">
+            Home
+            <span style="float: right">Hello *Username Here* (<a href="#">Sign Out</a>)</span>
+        </div>
         <div class="topwindow" id="view1">
             <div class="buttcontainer">
-            <div class="currentblu" id="currentusr">TA: *Username Here* &nbsp; (<a href="#">Sign Out</a>)</div>
             <h1 style="text-align: center; margin-top: -10px; padding-top: 20px;" id="title">Find My TA</h1>
             <table class="tatable">
               <thead>
@@ -71,6 +74,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-resource.js"></script>
         <script src="app.js"></script>
         <script src="facultyHomeController.js"></script>
+        
     </body>
     
 </html>
