@@ -26,4 +26,16 @@ function func($scope, $http) {
     $scope.redirectToUpdateAccount = function() {
         window.location.href = "/faculty-update-profile.html";
     };
+
+    $scope.editDetails = function(course) {
+        window.location.href = `/faculty-edit-course-information.html?id=${course.id}`;
+    };
+
+    $scope.stopManagingCourse = function(course) {
+        $http.put(`/api/faculty/${facultyID}/drop_course/${course._id}`)
+            .then(_ => {
+                window.location.href = "/ta-home.html";
+            })
+            .catch(e => alert(JSON.stringify(e)));
+    };
 }
