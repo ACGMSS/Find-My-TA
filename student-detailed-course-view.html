@@ -43,7 +43,12 @@
                   <tr ng-repeat="admin in admins">
                       <td><a ng-click="viewDetailedAdmin(admin)">{{admin.name}}</a></td>
                       <td>{{admin.email}}</td>
-                      <td>{{admin.officeHoursTime}}</td>
+                      <td>
+                          <div ng-repeat="officeHoursTime in admin.officeHoursTimes">
+                              <p>Day: {{officeHoursTime.day}}</p>
+                              <p>Time: {{officeHoursTime.time}}</p>
+                          </div>
+                      </td>
                       <td><a ng-click="jumpToLocation(admin.officeHoursLocation.buildingLatitude, admin.officeHoursLocation.buildingLongitude)">{{admin.officeHoursLocation.buildingName}}</a></td>
                       <td>{{admin.officeHoursLocation.room}}</td>
                   </tr>
