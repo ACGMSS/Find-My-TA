@@ -54,6 +54,7 @@
                   <tr ng-repeat="course in managedCourses">
                       <td>{{course.name}}</td>
                       <td class="sectiontd">{{course.sectionNumber}}</td>
+                      <td><button ng-click="editDetails(course)" class="stopbtn">Edit Course Information</button></td>
                       <td><button ng-click="stopManagingCourse(course)" class="stopbtn">Stop Managing Course</button></td>
                   </tr>
               </tbody>            </table>
