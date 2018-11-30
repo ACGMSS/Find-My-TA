@@ -28,7 +28,7 @@ function func($scope, $http) {
     };
 
     $scope.editDetails = function(course) {
-        window.location.href = `/faculty-edit-course-information.html?course_id=${course.id}`;
+        window.location.href = `/faculty-edit-course-information.html?course_id=${course._id}`;
     };
 
     $scope.stopManagingCourse = function(course) {
