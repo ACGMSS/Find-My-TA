@@ -18,6 +18,11 @@
     </style>
   </head>
   <body ng-app="find-my-ta" ng-controller="StudentDetailedCourseViewController">
+      <div class="navspacer"></div>
+      <div class="navigation">
+          <a href="student-home.html">Home</a>
+          <span style="float: right;">Hello *Username Here* (<a href="#">Sign Out</a>)</span>
+      </div>
       <div class="col-md-6">
           <div class="tableWrapper">
               <h2>Course Information</h2>
@@ -30,6 +35,7 @@
                       <td>{{time.meetingTime}}</td>
                       <td>{{time.meetingPlace}}</td>
                   </tr>
+              </table>
           </div>
           <div class="tableWrapper">
               <table class="table table-striped table-hover">

@@ -6,6 +6,11 @@
       <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
   </head>
   <body ng-app="find-my-ta">
+      <div class="navspacer"></div>
+      <div class="navigation">
+          <a href="student-home.html">Home</a>
+          <span style="float: right;">Hello *Username Here* (<a href="#">Sign Out</a>)</span>
+      </div>
       <div class="container">
       <div class="row" ng-controller="StudentAddCourseController">
         <div class="col-md-6">
@@ -30,5 +35,6 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-resource.js"></script>
       <script src="app.js"></script>
       <script src="studentAddCourseController.js"></script>
+      </div>
   </body>
 </html>

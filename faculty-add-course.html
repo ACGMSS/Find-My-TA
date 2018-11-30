@@ -7,6 +7,11 @@
 
   </head>
   <body ng-app="find-my-ta">
+      <div class="navspacer"></div>
+      <div class="navigation">
+          <a href="ta-home.html">Home</a>
+          <span style="float: right;">Hello *Username Here* (<a href="#">Sign Out</a>)</span>
+      </div>
       <div class="container">
       <div class="row" ng-controller="FacultyCourseManagerController">
           <div class="col-md-6">
@@ -50,6 +55,7 @@
                         <td><button class="normbtn" ng-click="deleteOfficeHour($index)">Delete</button></td>
                     </tr>
                 </table>
+            </div>
       <script>
        var marker = null;
        var place = null;

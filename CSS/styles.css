@@ -1,5 +1,10 @@
 html, body{ height:100%; width:100%; font-family: 'Quicksand'; overflow-y: overlay; }
 html, body, table, tr{ margin:0; padding:0; }
+body {
+    background-image: url(/Images/tower2.jpg);
+    background-position: center;
+    background-size: cover
+}
 .title h1 {
     font-family: 'Quicksand';
     font-weight: 700;
@@ -316,6 +321,7 @@ select:-webkit-autofill:focus {
     font-weight: 600;
     color: white;
     font-size: 17px;
+    z-index: 999;
 }
 .navigation a {
     text-decoration: none;
@@ -328,4 +334,8 @@ select:-webkit-autofill:focus {
 .navigation a:hover, .navigation span a:hover {
     text-decoration: none;
     color: #42c2f4;
+}
+.navspacer {
+    height: 60px;
+    width: 100%;
 }
