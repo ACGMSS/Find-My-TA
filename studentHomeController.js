@@ -35,4 +35,8 @@ function func($scope, $resource, $http) {
             });
             console.log($scope.enrolledCourses);
         }).catch(e => alert(JSON.stringify(e)));
+
+    $scope.redirectToFutureCourses = function() {
+        window.location.href = "/future-courses.html";
+    };
 }
