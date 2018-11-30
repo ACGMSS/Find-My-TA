@@ -308,12 +308,24 @@ select:-webkit-autofill:focus {
     top: 0px;
     left: 0px;
     right: 0px;
-    background-color: #7cdaff;
+    background-color: #555666;
     height: 50px;
     line-height: 50px;
     padding: 0px 20px;
     font-family: 'Quicksand';
     font-weight: 600;
     color: white;
-    font-size: 16px;
+    font-size: 17px;
+}
+.navigation a {
+    text-decoration: none;
+    color: white;
+}
+.navigation span a {
+    text-decoration: none;
+    color: #D1F4FF;
+}
+.navigation a:hover, .navigation span a:hover {
+    text-decoration: none;
+    color: #42c2f4;
 }
