@@ -14,24 +14,37 @@ angular.module('faculty').service('UFAPIService', ['$http', function ($http) {
    - instructor (does this need to be an exact match?)
 */
     function queryUFCourses(query) {
-        let queryString = "";
-        function modifyIfNotNull(field) {
-            if (query.hasOwnProperty(field)) {
-                if (queryString !== "") {
-                    queryString = queryString + "&";
+        let courses = [];
+        return loop(0);
+
+        function loop(lastControlNumber) {
+            let queryString = "";
+            function modifyIfNotNull(field) {
+                if (query.hasOwnProperty(field)) {
+                    if (queryString !== "") {
+                        queryString = queryString + "&";
+                    }
+                    queryString = queryString + `${field}=${query[field]}`;
                 }
-                queryString = queryString + `${field}=${query[field]}`;
             }
+            modifyIfNotNull("dept");
+            modifyIfNotNull("term");
+            queryString += `&last-control-number=${lastControlNumber}`;
+            console.log("UF Courses Query: " + queryString);
+            return $http.get(encodeRequestToProxy(queryString), {
+                headers: {
+                    'X-Requested-With': 'foobar'
+                }
+            }).then(function(response) {
+                let done = response.data[0].RETRIEVEDROWS === 0;
+                if (done) {
+                    return courses;
+                } else {
+                    courses.push(...response.data[0].COURSES);
+                    return loop(response.data[0].LASTCONTROLNUMBER);
+                }
+            });
         }
-        modifyIfNotNull("dept");
-        modifyIfNotNull("term");
-        console.log("UF Courses Query: " + queryString);
-        let url = encodeRequestToProxy(queryString);
-        return $http.get(url, { headers: {
-            'X-Requested-With': 'foobar'
-        }}).then(function(response) {
-            return response.data[0].COURSES;
-        });
     }
 
     return function() {
