@@ -16,6 +16,8 @@ function func($http, $scope, $resource) {
             $scope.name = faculty.name;
             $scope.twitter = faculty.social.twitterHandle;
             $scope.linkedin = faculty.social.linkedinLink;
+            $scope.jobOpenings = faculty.jobOpenings;
+            $scope.research = faculty.research;
             $scope.updateAccount = function() {
                 let modified = {
                     email: $scope.facultyEmail,
@@ -25,6 +27,8 @@ function func($http, $scope, $resource) {
                         twitterHandle: $scope.twitter,
                         linkedinLink: $scope.linkedin,
                     },
+                    jobOpenings: $scope.jobOpenings,
+                    research: $scope.research
                 };
                 $http.put(`/api/faculty/${sessionStorage.getItem("facultyID")}`, modified)
                     .then((response) => {
@@ -34,4 +38,18 @@ function func($http, $scope, $resource) {
                     }).catch(e => alert(JSON.stringify(e)));
             };
         }).catch(e => alert(JSON.stringify(e)));
+
+    $scope.addJobOpening = function() {
+        $scope.jobOpenings.push({
+            title: "",
+            description: "",
+            hoursPerWeek: "",
+            payPerHour: "",
+        });
+    };
+
+    $scope.deleteJobOpening = function($index) {
+        $scope.jobOpenings.splice($index, 1);
+    };
+
 }
