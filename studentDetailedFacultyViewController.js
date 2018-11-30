@@ -1,6 +1,9 @@
-angular.module('student').controller('StudentDetailedFacultyViewController', ['$scope', '$http', func]);
+angular.module('student').controller('StudentDetailedFacultyViewController', ['$scope',
+                                                                              '$http',
+                                                                              '$sce',
+                                                                              func]);
 
-function func($scope, $http) {
+function func($scope, $http, $sce) {
     const studentID = sessionStorage.getItem("studentID");
     const username = sessionStorage.getItem("studentUsername");
     const password = sessionStorage.getItem("studentPassword");
@@ -10,6 +13,8 @@ function func($scope, $http) {
     getFacultyInfo()
         .then(f => {
             $scope.faculty = f;
+            $scope.rateMyProfessorURL = $sce.trustAsResourceUrl(
+                `https://www.ratemyprofessors.com/search.jsp?queryoption=HEADER&queryBy=teacherName&schoolName=University+of+Florida&schoolID=1100&query=${f.name}`);
         })
         .catch(e => alert(JSON.stringify(e)));
 
@@ -18,4 +23,6 @@ function func($scope, $http) {
         const facultyID = urlParams.get('facultyID');
         return $http.get(`/api/faculty/${facultyID}`).then(x => x.data.data);
     }
+
+
 }
