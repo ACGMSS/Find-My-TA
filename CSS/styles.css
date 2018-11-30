@@ -3,20 +3,7 @@ html, body, table, tr{ margin:0; padding:0; }
 body {
     background-image: url(/Images/tower2.jpg);
     background-position: center;
-    background-size: cover
-}
-.title h1 {
-    font-family: 'Quicksand';
-    font-weight: 700;
-    color: #333;
-    margin-top: 17vh;
-    font-size: 85px;
-}
-@media (max-width: 550px) {
-    .title h1 {
-        font-size: 55px;
-        margin-top: 15vh;
-    }
+    background-size: cover;
 }
 .loginheader {
     text-align: center;
@@ -28,6 +15,8 @@ body {
 .title {
     text-align: center;
     margin-top: 80px;
+    font-family: 'Quicksand';
+    font-size: 70px !important;
 }
 label, input {
     display: block;
@@ -100,50 +89,6 @@ select:-webkit-autofill:focus {
     transition: background-color 5000s ease-in-out 0s;
     -webkit-box-shadow: 0 0 0px 1000px #eaf8ff inset;
 }
-.topwindow {
-    background-color: #42c2f4;
-    color: white;
-    height: 60%;
-    width: 100vw;
-    margin: 0px;
-    padding: 0px;
-    float: left;
-    overflow: hidden;
-    font-family: 'Quicksand';
-    display: table;
-}
-.botwindow {
-    height: 40%;
-    width: 100vw;
-    margin: 0px;
-    padding: 0px;
-    float: right;
-    overflow: hidden;
-    font-family: 'Quicksand';
-    display: table;
-}
-.leftwindow {
-    background-color: #42c2f4;
-    color: white;
-    width: 60%;
-    height: 100vh;
-    margin: 0px;
-    padding: 0px;
-    float: left;
-    overflow: hidden;
-    font-family: 'Quicksand';
-    display: table;
-}
-.rightwindow {
-    width: 40%;
-    height: 100vh;
-    margin: 0px;
-    padding: 0px;
-    float: right;
-    overflow: hidden;
-    font-family: 'Quicksand';
-    display: table;
-}
 .homebutts {
     margin-top: 28px;
     width: 310px;
@@ -160,13 +105,10 @@ select:-webkit-autofill:focus {
     margin: auto;
     margin-top: 20px;
     margin-bottom: 20px;
+    text-align: center;
 }
 .homebutts:hover {
     background-color: #7cdaff;
-}
-.buttcontainer {
-    display: table-cell;
-    vertical-align: middle;
 }
 .smallbutts {
     margin-top: 28px;
@@ -194,7 +136,7 @@ select:-webkit-autofill:focus {
     height: 48px;
 }
 .tatable {
-    width: 75%;
+    width: 65%;
     min-width: 450px;
     background-color: white;
     color: #333;
@@ -202,6 +144,7 @@ select:-webkit-autofill:focus {
     margin-left:auto; 
     margin-right:auto;
     line-height: 30px;
+    max-width: 1100px;
 }
 @media only screen and (max-width: 500px) {
     .tatable {
@@ -230,27 +173,6 @@ select:-webkit-autofill:focus {
 .tatable tbody tr td {
     padding: 10px;
 }
-/*
-.tatable tbody tr:hover {
-    background-color: #C9F0FF;
-    border-radius: 0px 0px 18px 18px;
-}
-.tatable tbody tr:active {
-    color: #42c2f4;
-}
-*/
-.tablebutts {
-    background-color: white;
-    color: #333;
-    border: none;
-    border-radius: 6px;
-    margin-top: 14px;
-    width: 153px;
-    transition: all 0.15s ease-out;
-}
-.tablebutts:hover {
-    background-color: #C9F0FF;
-}
 .stopbtn {
     border: none;
     border-radius: 18px;
@@ -265,34 +187,6 @@ select:-webkit-autofill:focus {
 }
 .sectiontd {
     text-align: center;
-}
-.addbutt {
-    background-color: white;
-    color: #333;
-    border: none;
-    border-radius: 6px;
-    margin-top: 14px;
-    width: 300px;
-    transition: all 0.15s ease-out;
-}
-.addbutt:hover {
-    background-color: #C9F0FF;
-}
-.currentblu {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    margin-right: 10px;
-    color: #42c2f4;
-    font-weight: 700;
-}
-.currentwhi {
-    position: relative;
-    text-align: right;
-    margin-right: 30px;
-    margin-top: 20px;
-    color: white;
-    font-weight: 700;
 }
 .normbtn {
     border: none;
