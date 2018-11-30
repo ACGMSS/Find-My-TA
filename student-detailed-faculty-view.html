@@ -31,24 +31,17 @@
                           <th>Hours Per Week</th>
                           <th>Pay Per Hour</th>
                       </tr>
-                      <tr>
-                          <td>Software Engineering TA</td>
-                          <td>Give Team 1 a 100% on sprint 2 demo</td>
-                          <td>1</td>
-                          <td>100</td>
-                      </tr>
-                      <tr>
-                          <td>Circuits TA</td>
-                          <td>Give Jake Samuelson an A</td>
-                          <td>1</td>
-                          <td>100</td>
+                      <tr ng-repeat="x in faculty.jobOpenings">
+                          <td>{{x.title}}</td>
+                          <td>{{x.description}}</td>
+                          <td>{{x.hoursPerWeek}}</td>
+                          <td>{{x.payPerHour}}</td>
                       </tr>
                   </table>
               </div>
         </div>
           <div class="col-xs-0 col-sm-0 col-md-1 col-lg-1"></div>
       </div>
-      
       <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-resource.js"></script>
       <script src="app.js"></script>

@@ -6,15 +6,17 @@ function func($http, $scope, $resource) {
     });
 
     $scope.signUpFaculty = function() {
-         let newFaculty = new Faculty({
+        let newFaculty = new Faculty({
             facultyType: "Professor",
-             name: $scope.name,
+            name: $scope.name,
             email: $scope.facultyEmail,
             password: $scope.facultyPassword,
             social: {
                 twitterHandle: $scope.twitter,
                 linkedinLink: $scope.linkedin
-            }
+            },
+            jobOpenings: $scope.jobOpenings,
+            research: $scope.research,
         });
         newFaculty.$save().then(() => {
             sessionStorage.setItem("facultyUsername",  $scope.facultyEmail);
@@ -29,5 +31,19 @@ function func($http, $scope, $resource) {
             alert("Error when creating new faculty: " + JSON.stringify(e));
             throw e;
         });
+    };
+
+    $scope.jobOpenings = [];
+    $scope.addJobOpening = function() {
+        $scope.jobOpenings.push({
+            title: "",
+            description: "",
+            hoursPerWeek: "",
+            payPerHour: "",
+        });
+    };
+
+    $scope.deleteJobOpening = function($index) {
+        $scope.jobOpenings.splice($index, 1);
     };
 }
