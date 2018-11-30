@@ -28,61 +28,39 @@
 
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        
-        <script>            
-            window.onresize = windowcheck;
-        </script>
-        
     </head>
 
-    <body onload="windowcheck()" ng-app="find-my-ta">
+    <body ng-app="find-my-ta" ng-controller="StudentHomeController">
+        <div class="navspacer"></div>
         <div class="navigation">
             <a href="student-home.html">Home</a>
             <span style="float: right;">Hello *Username Here* (<a href="#">Sign Out</a>)</span>
         </div>
-        <div class="topwindow" id="view1" ng-controller="StudentHomeController">
-        
-            <div class="buttcontainer">
-            <h1 style="text-align: center; margin-top: -10px; padding-top: 20px;" id="title">Find My TA</h1>
-            <table class="tatable">
-              <thead>
-                <tr style="height: 50px;">
-                    <td><strong>Course Name</strong></td>
-                    <td><strong>Section Number</strong></td>
-                </tr>
-              </thead>
-              <tbody>
-                  <tr ng-repeat="course in enrolledCourses">
-                      <td>{{course.name}}</td>
-                      <td>{{course.sectionNumber}}</td>
-                      <td><button ng-click="loadDetailedInfo(course)" class="stopbtn">Load Detailed Info</button></td>
-                      <td><button ng-click="dropCourse(course)" class="stopbtn">Drop Course</button></td>
-                </tr>
-              </tbody>
-            </table>
-            <div class="smbuttcontainer">
-                    <button class="addbutt" type="" ng-click="redirectToAddCourse()"><strong>+</strong> Add Course</button>
-                </div>
-            </div>
-            
-        
-        </div>
-        
-        <div class="botwindow" id="view2">
-        
-            <div class="buttcontainer">
-            
-                <button class="homebutts" type="">View Office Hours</button>
-                <button class="homebutts" type="">View TA Location</button>
-                <button class="homebutts" type="">View Faculty Research</button>
-                <div class="smbuttcontainer" style="margin-top: 20px;">
-                    <button class="smallbutts" type="">Twitter</button>
-                    <button class="smallbutts" type="">Facebook</button>
-                    <button class="smallbutts" type="">Rate My Professsor</button>
-                </div>
-            
-            </div>
-        
+        <h1 style="text-align: center; margin-top: 20px; padding-top: 20px; font-family: 'Quicksand'; font-size: 70px">Find My TA</h1>
+        <table class="tatable">
+          <thead>
+            <tr style="height: 50px;">
+                <td><strong>Course Name</strong></td>
+                <td><strong>Section Number</strong></td>
+            </tr>
+          </thead>
+          <tbody>
+              <tr ng-repeat="course in enrolledCourses">
+                  <td>{{course.name}}</td>
+                  <td>{{course.sectionNumber}}</td>
+                  <td><button ng-click="loadDetailedInfo(course)" class="stopbtn">Load Detailed Info</button></td>
+                  <td><button ng-click="dropCourse(course)" class="stopbtn">Drop Course</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="homebutts" type="" ng-click="redirectToAddCourse()"><strong>+</strong> Add Course</button>
+        <button class="homebutts" type="">View Office Hours</button>
+        <button class="homebutts" type="">View TA Location</button>
+        <button class="homebutts" type="">View Faculty Research</button>
+        <div class="smbuttcontainer" style="margin: 20px auto;">
+            <button class="smallbutts" type="">Twitter</button>
+            <button class="smallbutts" type="">Facebook</button>
+            <button class="smallbutts" type="">Rate My Professsor</button>
         </div>
         <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-resource.js"></script>
