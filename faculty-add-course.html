@@ -24,10 +24,10 @@
                   <input type="text" class="form-control" placeholder="Search" ng-model="query" >
               </div>
               <div class="tableWrapper">
-                <table class="table table-striped table-hover">
+                <table class="tatable" style="width: 100%; margin-top: 10px; height: 600px; overflow-y: scroll; display: block; border-radius: 0px;">
                     <tr>
+                        <th style="padding-left: 12px;">Course Code</th>
                         <th>Course Name</th>
-                        <th>Course Code</th>
                     </tr>
                     <tr ng-repeat="listing in listings | filter:query as results">
                         <td>{{listing.code}}</td>
@@ -39,29 +39,29 @@
         </div>
         <div class="col-md-6">
             <div class="" id="searchBar">
-                <input type="text" class="inputpad" placeholder="Discord" ng-model="discord">
+                <input type="text" class="inputpad" style="margin-top: 53px;" placeholder="Discord" ng-model="discord">
                 <input type="text" class="inputpad" placeholder="Slack" ng-model="slack">
                 <input type="text" class="inputpad" id="searchTextField" placeholder="Office Hours Location">
                 <input type="text" class="inputpad" placeholder="Office Hours Room" ng-model="officeHoursRoom">
                 <button class="inputpad normbtn" ng-click="addOfficeHours()">Add Office Hours Time</button>
-                <table class="table table-striped table-hover">
+                <table class="tatable">
                     <tr>
-                        <th>Day</th>
-                        <th>Time</th>
+                        <th>&nbsp;&nbsp;&nbsp;Day</th>
+                        <th>&nbsp;&nbsp;&nbsp;Time</th>
                     </tr>
                     <tr ng-repeat="officeHour in officeHours track by $index">
-                        <td><input type="text" class="input" ng-model="officeHours[$index].day"></td>
-                        <td><input type="text" class="input" ng-model="officeHours[$index].time"></td>
-                        <td><button class="normbtn" ng-click="deleteOfficeHour($index)">Delete</button></td>
+                        <td><input type="text" class="input" style="width: 200px;" ng-model="officeHours[$index].day"></td>
+                        <td><input type="text" class="input" style="width: 200px;" ng-model="officeHours[$index].time"></td>
+                        <td><button class="normbtn" style="line-height: 36px;" ng-click="deleteOfficeHour($index)">Delete</button></td>
                     </tr>
                 </table>
             </div>
 
         </div>
         <div class="col-md-6">
-                <table class="table table-striped table-hover">
+                <table class="tatable" style="width: 100%; margin-top: 20px; text-align: center;">
                     <tr>
-                        <th>Class Number</th>
+                        <th style="text-align: center;">Class Number</th>
                     </tr>
                     <tr ng-repeat="section in selectedListing.sections track by $index">
                         <td>{{section.classNumber}}</td>

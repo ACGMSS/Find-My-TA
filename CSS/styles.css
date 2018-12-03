@@ -200,7 +200,7 @@ select:-webkit-autofill:focus {
     background-color: #D1F4FF;
 }
 .inputpad {
-    margin: 10px;
+    margin: 10px auto;
 }
 .navigation {
     position: fixed;

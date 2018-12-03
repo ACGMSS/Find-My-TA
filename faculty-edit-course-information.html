@@ -31,10 +31,10 @@
         
     </head>
 
-    <body ng-app="find-my-ta" ng-controller="FacultyUpdateAccountController">
+    <body ng-app="find-my-ta" ng-controller="FacultyUpdateSectionController">
         <div class="navigation">
             <a href="ta-home.html">Home</a>
-            <span style="float: right;">Hello {{facultyUsername}}  (<a href="#">Sign Out</a>)</span>
+            <span style="float: right;">Hello {{facultyUsername}}  (<a href="/login.html">Sign Out</a>)</span>
         </div>
           <div class="container-fluid">
               <div class="row">
@@ -55,8 +55,8 @@
                         </div>
                         <table class="tatable" style="margin-top: 5px;">
                             <tr>
-                                <th>Day</th>
-                                <th>Time</th>
+                                <th>&nbsp;&nbsp;&nbsp;Day</th>
+                                <th>&nbsp;&nbsp;&nbsp;Time</th>
                             </tr>
                             <tr ng-repeat="officeHour in course.officeHoursTimes">
                                 <td><input type="text" class="input" ng-model="officeHour.day"></td>
