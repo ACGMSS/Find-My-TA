@@ -14,7 +14,8 @@ function func($scope, $http, $sce) {
     getFacultyInfo()
         .then(f => {
             $scope.faculty = f;
-            $scope.faculty = a;
+            $scope.twitterHandle = f.social.twitterHandle;
+            $scope.linkedinLink = f.social.linkedinLink;
             $scope.rateMyProfessorURL = $sce.trustAsResourceUrl(
                 `https://www.ratemyprofessors.com/search.jsp?queryoption=HEADER&queryBy=teacherName&schoolName=University+of+Florida&schoolID=1100&query=${f.name}`);
             })
