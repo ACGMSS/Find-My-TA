@@ -4,6 +4,7 @@ function func($scope, $http) {
     const studentID = sessionStorage.getItem("studentID");
     const username = sessionStorage.getItem("studentUsername");
     const password = sessionStorage.getItem("studentPassword");
+    $scope.studentUsername = username;
     let encoded = btoa(`${username}:${password}`);
     $http.defaults.headers.common.Authorization = `Basic ${encoded}`;
 

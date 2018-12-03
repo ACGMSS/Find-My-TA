@@ -9,7 +9,7 @@
       <div class="navspacer"></div>
       <div class="navigation">
           <a href="student-home.html">Home</a>
-          <span style="float: right;">Hello *Username Here* (<a href="#">Sign Out</a>)</span>
+          <span style="float: right;">Hello {{studentUsername}} (<a href="#">Sign Out</a>)</span>
       </div>
       <div class="row">
           <div class="col-xs-0 col-sm-1 col-md-1 col-lg-2"></div>
@@ -18,7 +18,8 @@
               <p><b>Name: </b>{{faculty.name}}</p>
               <p><b>Faculty Type: </b>{{faculty.facultyType}}</p>
               <p><b>Email: </b>{{faculty.email}}</p>
-              <p><b>Twitter: </b>{{faculty.social.twitterHandle}}</p>
+              <a href="https://twitter.com/{{twitterHandle}}?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @{{faculty.social.twitterHandle}}</a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
               <p><b>Linkedin: </b>{{faculty.social.linkedinLink}}</p>
               <p><b>Research: </b>{{faculty.research}}</p>
               <p><b>Job Openings: </b></p>
