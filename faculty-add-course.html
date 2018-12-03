@@ -17,17 +17,17 @@
           <div class="col-md-6">
               <select ng-model="department" ng-options="key for (key, value) in departments">
               </select>
-              <button class="normbtn" ng-click="updateListings()" style="margin: 15px;">Update Listings</button>
+              <button class="normbtn" ng-click="updateListings()" style="margin: 15px; margin-left: 50px;">Update Listings</button>
 
               <div class="input-group" id="searchBar">
                   <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
                   <input type="text" class="form-control" placeholder="Search" ng-model="query" >
               </div>
               <div class="tableWrapper">
-                <table class="table table-striped table-hover">
+                <table class="tatable" style="width: 100%; margin-top: 10px; height: 600px; overflow-y: scroll; display: block; border-radius: 0px;">
                     <tr>
+                        <th style="padding-left: 12px;">Course Code</th>
                         <th>Course Name</th>
-                        <th>Course Code</th>
                     </tr>
                     <tr ng-repeat="listing in listings | filter:query as results">
                         <td>{{listing.code}}</td>
