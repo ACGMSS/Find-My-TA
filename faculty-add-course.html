@@ -6,14 +6,14 @@
       <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
 
   </head>
-  <body ng-app="find-my-ta">
+  <body ng-app="find-my-ta" ng-controller="FacultyCourseManagerController">
       <div class="navspacer"></div>
       <div class="navigation">
           <a href="/ta-home.html">Home</a>
-          <span style="float: right;">Hello *Username Here* (<a href="/login.html">Sign Out</a>)</span>
+          <span style="float: right;">Hello {{facultyUsername}} (<a href="/login.html">Sign Out</a>)</span>
       </div>
       <div class="container">
-      <div class="row" ng-controller="FacultyCourseManagerController">
+      <div class="row">
           <div class="col-md-6">
               <select ng-model="department" ng-options="key for (key, value) in departments">
               </select>
