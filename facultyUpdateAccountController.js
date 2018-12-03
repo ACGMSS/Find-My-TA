@@ -47,10 +47,14 @@ function func($http, $scope, $resource) {
             hoursPerWeek: "",
             payPerHour: "",
         });
+        document.getElementById("jobtable").style.display = "table";
     };
 
     $scope.deleteJobOpening = function($index) {
         $scope.jobOpenings.splice($index, 1);
+        if ($scope.jobOpenings.length === 0) {
+            document.getElementById("jobtable").style.display = "none";
+        }
     };
 
 }
