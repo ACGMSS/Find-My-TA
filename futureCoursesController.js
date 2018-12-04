@@ -7,7 +7,7 @@ function func($scope, UFAPIService, $resource, $http) {
     const password = sessionStorage.getItem("studentPassword");
     let encoded = btoa(`${username}:${password}`);
     $http.defaults.headers.common.Authorization = `Basic ${encoded}`;
-
+    $scope.studentUsername = username;
 
     function updateListingsForDepartment(department) {
         UFAPIService().queryUFCourses({
